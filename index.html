@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kindred & Kiln — Handmade Crafts</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="mark">K</div>
+    <div class="name">Kindred <em>&amp; Kiln</em></div>
+  </div>
+  <nav class="nav-links">
+    <a href="#shop">Shop</a>
+    <a href="#how">How it works</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Made by hand, one at a time</div>
+    <h1>Every piece is<br><span class="accent">one of one.</span></h1>
+    <p class="lede">Ceramics, woven textiles, and carved wood from independent makers. No mass production, no payment forms — just a code that's yours alone to claim your piece.</p>
+  </div>
+  <div class="stub" id="how">
+    <h4>How claiming works</h4>
+    <div class="step"><b>01</b><span>Pick a piece that speaks to you.</span></div>
+    <div class="step"><b>02</b><span>Enter the redeem code you were given.</span></div>
+    <div class="step"><b>03</b><span>The code locks to you — used once, by one person, forever.</span></div>
+  </div>
+</section>
+
+<div class="tabs" id="tabs"></div>
+
+<section class="grid-wrap" id="shop">
+  <div class="grid" id="grid">
+    <div class="empty-state">Loading pieces…</div>
+  </div>
+</section>
+
+<footer>Kindred &amp; Kiln — handmade goods, claimed by code, not by card.</footer>
+
+<div class="modal-backdrop" id="modalBackdrop"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

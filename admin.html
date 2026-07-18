@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Kindred &amp; Kiln</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- LOGIN -->
+<div id="loginScreen" class="login-box hidden">
+  <div class="mark" style="margin:0 auto 18px; width:44px; height:44px; font-size:19px;">K</div>
+  <h1>Workshop Admin</h1>
+  <p>Sign in to manage products, codes and orders.</p>
+  <form id="loginForm" class="field" style="text-align:left;">
+    <label>Email</label>
+    <input type="email" id="loginEmail" required>
+    <label style="margin-top:10px;">Password</label>
+    <input type="password" id="loginPassword" required>
+    <div class="form-msg err" id="loginErr" style="color:#e39c8a;"></div>
+    <button type="submit" class="btn btn-brass" style="margin-top:14px; width:100%;">Sign in</button>
+  </form>
+</div>
+
+<!-- ADMIN -->
+<div id="adminScreen" class="admin-shell hidden">
+  <div class="admin-header">
+    <div class="brand">
+      <div class="mark">K</div>
+      <div class="name">Workshop Admin</div>
+    </div>
+    <div>
+      <a href="index.html" class="btn btn-ghost" style="margin-right:10px; text-decoration:none; display:inline-block;">View store</a>
+      <button id="logoutBtn" class="btn btn-ghost">Sign out</button>
+    </div>
+  </div>
+
+  <!-- Add product -->
+  <div class="panel">
+    <h2>Add a product</h2>
+    <form id="productForm">
+      <div class="grid-2">
+        <div class="field"><label>Name</label><input id="pName" required></div>
+        <div class="field"><label>Category</label><input id="pCategory" placeholder="Ceramics"></div>
+      </div>
+      <div class="field"><label>Image URL</label><input id="pImage" placeholder="https://..."></div>
+      <div class="field"><label>Description</label><textarea id="pDesc"></textarea></div>
+      <button type="submit" class="btn btn-brass">Add product</button>
+    </form>
+  </div>
+
+  <!-- Product list -->
+  <div class="panel">
+    <h2>Products</h2>
+    <table>
+      <thead><tr><th>Name</th><th>Category</th><th>Status</th><th>Added</th><th>Actions</th></tr></thead>
+      <tbody id="productTableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Generate codes -->
+  <div class="panel">
+    <h2>Redeem codes</h2>
+    <p style="font-size:13px; color:#a6b0a8; margin:-6px 0 18px;">Codes are generic — any unused code claims whatever product the shopper is viewing.</p>
+    <form id="genCodesForm" class="grid-2" style="align-items:end; margin-bottom:20px;">
+      <div class="field">
+        <label>How many codes to generate</label>
+        <input id="codeCount" type="number" min="1" max="500" value="10">
+      </div>
+      <button type="submit" class="btn btn-brass">Generate codes</button>
+    </form>
+    <table>
+      <thead><tr><th>Code</th><th>Status</th><th>Redeemed by</th><th>When</th></tr></thead>
+      <tbody id="codeTableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Orders -->
+  <div class="panel">
+    <h2>Orders</h2>
+    <table>
+      <thead><tr><th>Product</th><th>Name</th><th>Email</th><th>Redeemed at</th></tr></thead>
+      <tbody id="orderTableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
