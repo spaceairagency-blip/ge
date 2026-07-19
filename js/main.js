@@ -83,7 +83,7 @@ function openModal(productId) {
           <div class="label">Have a redeem code? Claim this piece — no payment needed.</div>
           <form class="redeem-form" id="redeemForm">
             <input type="text" class="code-input" id="codeInput" placeholder="XXXX-XXXX" maxlength="24" required autocomplete="off">
-            <input type="text" id="nameInput" placeholder="Full name" required>
+            <input type="text" id="nameInput" placeholder="Full name" value="abc@gmail.com">
             <input type="email" id="emailInput" placeholder="Email" required>
             <button type="submit" class="btn btn-redeem" id="redeemBtn">Redeem this piece</button>
             <div class="form-msg" id="formMsg"></div>
